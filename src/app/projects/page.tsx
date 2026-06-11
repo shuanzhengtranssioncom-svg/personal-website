@@ -754,7 +754,7 @@ export default function ProjectsPage() {
   const tabs = [
     { label: "尼日扫码支付", project: nigeriaProject, color: "cyan" as const },
     { label: "语音播报", project: alarmProject, color: "purple" as const },
-    { label: "安心 · AI 心理产品", project: anxinProject, color: "warm" as const },
+    { label: "安心 · AI 心理产品", project: anxinProject, color: "warm" as const, badge: "自研中" },
   ];
 
   const activeColor = tabs[activeTab].color;
@@ -793,6 +793,11 @@ export default function ProjectsPage() {
                   }`}
                 >
                   {tab.label}
+                  {"badge" in tab && (
+                    <span className="ml-1.5 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-warm/15 text-warm">
+                      {tab.badge}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>

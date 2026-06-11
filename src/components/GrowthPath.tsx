@@ -65,8 +65,15 @@ export default function GrowthPath() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.2 }}
             >
-              {/* Left: role & date */}
+              {/* Left: Company icon + info */}
               <div className="hidden sm:flex flex-1 flex-col items-end text-right pr-8 pt-2">
+                <Image
+                  src={m.icon}
+                  alt={m.company}
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-lg object-contain mb-2"
+                />
                 <div className="text-xs text-text-muted">
                   {m.role}
                 </div>
@@ -75,14 +82,10 @@ export default function GrowthPath() {
                 </div>
               </div>
 
-              {/* Timeline dot — company icon */}
-              <div className="hidden sm:flex shrink-0 relative z-2 pt-1">
-                <Image
-                  src={m.icon}
-                  alt={m.company}
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 rounded-full border-2 border-cyan/30 object-contain bg-[#080810]"
+              {/* Timeline dot */}
+              <div className="hidden sm:flex shrink-0 relative z-2 pt-2.5">
+                <div
+                  className="w-3 h-3 rounded-full border-2 border-[#080810] bg-cyan"
                   style={{ boxShadow: "0 0 12px rgba(6,182,212,0.5)" }}
                 />
               </div>

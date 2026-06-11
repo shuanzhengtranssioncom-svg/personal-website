@@ -65,26 +65,15 @@ export default function GrowthPath() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.2 }}
             >
-              {/* Left: Company info */}
+              {/* Left: Company icon */}
               <div className="hidden sm:flex flex-1 flex-col items-end text-right pr-8 pt-2">
-                <div className="flex items-center gap-3 flex-row-reverse">
-                  <Image
-                    src={m.icon}
-                    alt={m.company}
-                    width={36}
-                    height={36}
-                    className="w-9 h-9 rounded-lg object-contain"
-                  />
-                  <div>
-                    <div className="text-base font-bold text-text">{m.company}</div>
-                    <div className="text-xs text-text-muted mt-0.5">
-                      {m.role}
-                    </div>
-                    <div className="text-xs text-text-muted">
-                      {m.date}
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src={m.icon}
+                  alt={m.company}
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-lg object-contain"
+                />
               </div>
 
               {/* Timeline dot */}
@@ -107,7 +96,7 @@ export default function GrowthPath() {
 
               {/* Mobile layout */}
               <div className="sm:hidden flex-1 rounded-xl border border-border bg-[rgba(255,255,255,0.03)] p-5">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="mb-4">
                   <Image
                     src={m.icon}
                     alt={m.company}
@@ -115,12 +104,6 @@ export default function GrowthPath() {
                     height={36}
                     className="w-9 h-9 rounded-lg object-contain"
                   />
-                  <div>
-                    <div className="text-base font-bold">{m.company}</div>
-                    <div className="text-xs text-text-muted">
-                      {m.role} · {m.date}
-                    </div>
-                  </div>
                 </div>
                 <span className="inline-block text-xs font-semibold mb-2 text-cyan">
                   {m.insight}

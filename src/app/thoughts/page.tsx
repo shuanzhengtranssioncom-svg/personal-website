@@ -19,7 +19,7 @@ const methodology = {
         "公司若需要快速建立用户认知，我可以把模糊的「用户需要什么」变成可执行的产品需求，经 1 万+ 调研样本验证。",
     },
     {
-      title: "AI 功能 0→1 落地框架",
+      title: "AI 功能落地框架",
       steps: ["挖掘用户场景·为什么是AI不是规则", "确定人机边界·AI做什么/人做什么", "模型策略·延迟/成本/准确率如何取舍", "容错机制·AI错了用户怎么办", "验收标准·上线前怎么判断够好了", "增长闭环·数据怎么回来让AI更好"],
       evidence:
         "尼日利亚 OCR：从「输错号码焦虑」场景出发，端侧识别+用户可编辑结果作为容错，通过「用户纠错→样本回收→模型重训」闭环回收 1,000+ 样本，准确率 45%→90%。安心：锁定「深夜一个人硬扛」场景，云端 API 策略，状态机+安全检测双保险，Benchmark（3 模型×6 场景×2 轮）验证可行性。",
@@ -63,7 +63,7 @@ const methodology = {
         "If your team needs to rapidly build user understanding, I turn vague questions into actionable product requirements — validated across 10k+ survey samples.",
     },
     {
-      title: "AI Feature 0→1 Launch Framework",
+      title: "AI Feature Launch Framework",
       steps: ["User scenario·why AI not rules", "Human-AI boundary·what each does", "Model strategy·latency/cost/accuracy", "Fault tolerance·when AI gets it wrong", "Acceptance criteria·how good is good enough", "Growth loop·data back to improve AI"],
       evidence:
         "Nigeria OCR: 'number-entry anxiety' → on-device recognition + editable results as fault tolerance → 'user edit → sample collection → retraining' loop, 1,000+ samples, accuracy 45%→90%. Anxin: 'coping alone at midnight' scenario → cloud API strategy → state machine + safety detection → Benchmark validated (3 models × 6 scenarios × 2 rounds).",

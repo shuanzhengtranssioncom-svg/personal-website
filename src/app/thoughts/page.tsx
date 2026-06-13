@@ -32,7 +32,7 @@ const methodology = {
       evidence:
         "OCR 扫一扫：将「手动输入 10 位数字」压缩为「扫一下」，降低操作负荷。闹钟播报：晨起从「刺耳铃声」变为「温柔语音+天气时间」，改变了体验的终点感受。安心：免费倾诉→付费健身包，登门槛效应让转化更自然；S0 承接阶段用正常化技术降低用户心理防御。",
       value:
-        "普通 PM 靠直觉做设计决策。公司如果需要 PM 在信息架构、体验设计和行为引导上做出有心理学依据的判断，我能用心理学的方法让产品决策都有理论支撑，同时结合数据表现，做有理有据的决策，而不是靠直觉行事。",
+        "公司如果需要 PM 在信息架构、体验设计和行为引导上做出有心理学依据的判断，我能用心理学的方法让产品决策都有理论支撑，同时结合数据表现，做有理有据的决策，而不是靠直觉行事。",
     },
     {
       title: "多语言 / 多市场产品适配清单",
@@ -76,7 +76,7 @@ const methodology = {
       evidence:
         "OCR: compressed 'type 10 digits' into 'scan once' — reducing operational load. Alarm: transformed morning from 'harsh alarm' to 'gentle voice + weather/time' — changed the endpoint of the experience. Anxin: free session → paid fitness pack via foot-in-the-door effect; S0 normalization technique reduces psychological defensiveness.",
       value:
-        "Most PMs design by gut feel. If your team needs a PM who makes psychologically-informed decisions about information architecture, experience design, and behavior guidance — I combine psychological methods with data to drive reasoned product decisions, not intuition.",
+        "If your team needs a PM who makes psychologically-informed decisions about information architecture, experience design, and behavior guidance — I combine psychological methods with data to drive reasoned product decisions, not intuition.",
     },
     {
       title: "Multi-Market Product Adaptation Checklist",

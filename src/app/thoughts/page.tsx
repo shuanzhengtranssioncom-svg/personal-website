@@ -11,12 +11,12 @@ import { useLang } from "@/lib/i18n";
 const methodology = {
   zh: [
     {
-      title: "海外新兴市场用户调研 SOP",
+      title: "用户调研 SOP",
       steps: ["锁定核心假设", "设计问卷/访谈提纲", "线上问卷投放", "清洗无效样本", "输出用户画像"],
       evidence:
         "尼日利亚项目发放 2,092 份问卷（印度/尼日/加纳/巴基斯坦四国），输出闹钟播报内容优先级排序，最终功能渗透率 4.6% 超目标。扫码支付项目通过用户访谈锁定「输错号码焦虑」核心痛点。",
       value:
-        "公司若在拓展海外市场，我可以快速建立当地用户认知，把模糊的「海外用户需要什么」变成可执行的产品需求。",
+        "公司若需要快速建立用户认知，我可以把模糊的「用户需要什么」变成可执行的产品需求，经 1 万+ 调研样本验证。",
     },
     {
       title: "AI 功能 0→1 落地框架",
@@ -27,12 +27,21 @@ const methodology = {
         "公司若有 AI 功能要落地，我能用这套框架从场景出发走完全程——不止是「接入一个模型」，而是设计完整的容错、验证和增长机制。",
     },
     {
+      title: "用户反馈 → 产品需求的结构化转化",
+      steps: ["多渠道收集", "归因分析·追溯WHY", "频次×痛苦度×成本排序", "输出·用户原话+方案"],
+      evidence:
+        "心理学硕士背景 + 1 万+ 调研样本训练。闹钟项目从 2,092 份问卷排序播报内容优先级。尼日项目「输错号码焦虑」洞察直接定义可编辑体验。",
+      value:
+        "公司如果需要 PM 把散乱的用户声音变成清晰的需求优先级，我能用经反复验证的四步漏斗来完成，而不是凭感觉拍脑袋。",
+    },
+    {
       title: "多语言 / 多市场产品适配清单",
       steps: ["语言层·英+当地语言", "视觉层·图标排版", "功能层·弱网离线"],
       evidence:
         "传音产品覆盖印度、尼日利亚、加纳、巴基斯坦等多市场。闹钟语音播报支持英/法语自定义音色。尼日利亚扫码支付在多语言下完成支付流程适配。",
       value:
         "公司若有需要覆盖多市场的 C 端产品，我可以用这套清单快速排查本地化遗漏点，避免上线后才发现某个市场文案溢出或功能不可用。",
+      optional: true,
     },
     {
       title: "Google Play 上架 & 海外合规实操",
@@ -41,24 +50,17 @@ const methodology = {
         "目前产品更新迭代均需要完成 Google Play 上架。",
       value:
         "公司若需要一个在上架和合规上有实操经验的 PM——不需要等法务催了才补隐私弹框，我会在产品设计阶段就把这些纳入 checklist。",
-    },
-    {
-      title: "用户反馈 → 产品需求的结构化转化",
-      steps: ["多渠道收集", "归因分析·追溯WHY", "频次×痛苦度×成本排序", "输出·用户原话+方案"],
-      evidence:
-        "心理学硕士背景 + 1 万+ 调研样本训练。闹钟项目从 2,092 份问卷排序播报内容优先级。尼日项目「输错号码焦虑」洞察直接定义可编辑体验。",
-      value:
-        "公司如果需要 PM 把散乱的用户声音变成清晰的需求优先级，我能用经反复验证的四步漏斗来完成，而不是凭感觉拍脑袋。",
+      optional: true,
     },
   ],
   en: [
     {
-      title: "User Research SOP for Emerging Markets",
+      title: "User Research SOP",
       steps: ["Lock hypotheses", "Design survey guide", "Online survey", "Clean invalid data", "Output personas"],
       evidence:
         "Nigeria: 2,092 responses across India, Nigeria, Ghana, Pakistan. Alarm broadcast content ranking drove 4.6% penetration (above 4% target). QR payment: interviews pinpointed 'number-entry anxiety' as the core pain point.",
       value:
-        "If your team is expanding into emerging markets, I can rapidly build user understanding and turn vague questions into actionable product requirements.",
+        "If your team needs to rapidly build user understanding, I turn vague questions into actionable product requirements — validated across 10k+ survey samples.",
     },
     {
       title: "AI Feature 0→1 Launch Framework",
@@ -69,12 +71,21 @@ const methodology = {
         "If your company is shipping AI features, I bring a battle-tested framework — not just 'connect to an API', but design the full fault tolerance, validation, and growth loop around it.",
     },
     {
+      title: "User Feedback → Product Requirements Pipeline",
+      steps: ["Multi-channel collect", "Attribution·trace WHY", "Frequency×Pain×Cost rank", "Output·quote+solution"],
+      evidence:
+        "Master's in Applied Psychology + 10k+ samples. Alarm: 2,092 responses → prioritized content ranking. Nigeria: 'number-entry anxiety' → editable correction UX.",
+      value:
+        "If your team needs a PM who turns messy user signals into clear priorities, I bring a battle-tested four-stage funnel — no gut-feel guessing.",
+    },
+    {
       title: "Multi-Market Product Adaptation Checklist",
       steps: ["Language·EN+local", "Visual·icons+layout", "Functional·weak network"],
       evidence:
         "Transsion products across India, Nigeria, Ghana, Pakistan. Alarm broadcast: English/French custom voice. Nigeria QR payment: multi-language payment flow adaptation.",
       value:
         "If your team ships across markets, I can use this checklist to catch localization gaps fast — no more post-launch text overflow surprises.",
+      optional: true,
     },
     {
       title: "Google Play Listing & Compliance Basics",
@@ -83,14 +94,7 @@ const methodology = {
         "All ongoing product iterations require Google Play listing completion.",
       value:
         "If your team needs a PM with hands-on listing & compliance experience — someone who builds privacy into the design phase rather than waiting for legal to flag it.",
-    },
-    {
-      title: "User Feedback → Product Requirements Pipeline",
-      steps: ["Multi-channel collect", "Attribution·trace WHY", "Frequency×Pain×Cost rank", "Output·quote+solution"],
-      evidence:
-        "Master's in Applied Psychology + 10k+ samples. Alarm: 2,092 responses → prioritized content ranking. Nigeria: 'number-entry anxiety' → editable correction UX.",
-      value:
-        "If your team needs a PM who turns messy user signals into clear priorities, I bring a battle-tested four-stage funnel — no gut-feel guessing.",
+      optional: true,
     },
   ],
 };
@@ -100,9 +104,9 @@ const methodology = {
 const icons = [
   <svg key="0" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" strokeWidth="1.5"/><path d="M4 21c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" strokeWidth="1.5"/><circle cx="19" cy="18" r="3" stroke="currentColor" strokeWidth="1.5"/><path d="M20 18l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
   <svg key="1" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
-  <svg key="2" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" strokeWidth="1.5"/><path d="M3 12h18" stroke="currentColor" strokeWidth="1.5"/></svg>,
-  <svg key="3" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.5 4 10.5 9 12 5-1.5 9-6.5 9-12V7l-9-5z" stroke="currentColor" strokeWidth="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  <svg key="4" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 4h18L14 13v5l-4 2v-7L3 4z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
+  <svg key="2" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 4h18L14 13v5l-4 2v-7L3 4z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
+  <svg key="3" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" strokeWidth="1.5"/><path d="M3 12h18" stroke="currentColor" strokeWidth="1.5"/></svg>,
+  <svg key="4" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.5 4 10.5 9 12 5-1.5 9-6.5 9-12V7l-9-5z" stroke="currentColor" strokeWidth="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
 ];
 
 /* ── Component ─────────────────────────────────────────── */
@@ -139,8 +143,8 @@ export default function ThoughtsPage() {
             </h1>
             <p className="text-sm text-text-muted leading-relaxed max-w-md mx-auto">
               {lang === "zh"
-                ? "五个经真实项目验证、可直接复用的产品方法。"
-                : "Five battle-tested product methods, ready to deploy in your next team."}
+                ? "三个核心方法 + 两个可选模块，均经真实项目验证，可直接复用。"
+                : "Three core methods + two optional modules, all battle-tested and ready to deploy."}
             </p>
           </div>
 
@@ -180,7 +184,14 @@ export default function ThoughtsPage() {
                     </span>
 
                     {/* Title */}
-                    <span className="text-sm font-semibold text-text flex-1">{item.title}</span>
+                    <span className="text-sm font-semibold text-text flex-1">
+                      {item.title}
+                      {"optional" in item && (
+                        <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium border border-[rgba(255,255,255,0.08)] text-text-muted/50">
+                          {lang === "zh" ? "可选" : "Optional"}
+                        </span>
+                      )}
+                    </span>
 
                     {/* Chevron */}
                     <motion.span

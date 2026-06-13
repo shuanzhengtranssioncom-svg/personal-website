@@ -28,7 +28,7 @@ const methodology = {
     },
     {
       title: "心理学驱动的产品设计方法",
-      steps: ["信息呈现·降低认知负荷", "行为引导·登门槛效应", "体验感知·峰终定律", "习惯养成·暗示→行为→奖励"],
+      steps: ["信息呈现·米勒定律", "行为引导·登门槛效应", "体验感知·峰终定律", "习惯养成·强化学习"],
       evidence:
         "OCR 扫一扫：将「手动输入 10 位数字」压缩为「扫一下」，降低操作负荷。闹钟播报：晨起从「刺耳铃声」变为「温柔语音+天气时间」，改变了体验的终点感受。安心：免费倾诉→付费健身包，登门槛效应让转化更自然；S0 承接阶段用正常化技术降低用户心理防御。",
       value:
@@ -72,7 +72,7 @@ const methodology = {
     },
     {
       title: "Psychology-Driven Product Design",
-      steps: ["Information display·reduce cognitive load", "Behavior guidance·foot-in-the-door", "Experience perception·peak-end rule", "Habit formation·cue→routine→reward"],
+      steps: ["Information display·Miller's Law", "Behavior guidance·foot-in-the-door", "Experience perception·peak-end rule", "Habit formation·reinforcement learning"],
       evidence:
         "OCR: compressed 'type 10 digits' into 'scan once' — reducing operational load. Alarm: transformed morning from 'harsh alarm' to 'gentle voice + weather/time' — changed the endpoint of the experience. Anxin: free session → paid fitness pack via foot-in-the-door effect; S0 normalization technique reduces psychological defensiveness.",
       value:

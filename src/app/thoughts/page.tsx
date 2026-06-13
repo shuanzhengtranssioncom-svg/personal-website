@@ -27,12 +27,12 @@ const methodology = {
         "公司若有 AI 功能要落地，我能用这套框架从场景出发走完全程——不止是「接入一个模型」，而是设计完整的容错、验证和增长机制。",
     },
     {
-      title: "用户反馈 → 产品需求的结构化转化",
-      steps: ["多渠道收集", "归因分析·追溯WHY", "频次×痛苦度×成本排序", "输出·用户原话+方案"],
+      title: "心理学驱动的产品设计方法",
+      steps: ["信息呈现·降低认知负荷", "行为引导·登门槛效应", "体验感知·峰终定律", "习惯养成·暗示→行为→奖励"],
       evidence:
-        "心理学硕士背景 + 1 万+ 调研样本训练。闹钟项目从 2,092 份问卷排序播报内容优先级。尼日项目「输错号码焦虑」洞察直接定义可编辑体验。",
+        "OCR 扫一扫：将「手动输入 10 位数字」压缩为「扫一下」，降低操作负荷。闹钟播报：晨起从「刺耳铃声」变为「温柔语音+天气时间」，改变了体验的终点感受。安心：免费倾诉→付费健身包，登门槛效应让转化更自然；S0 承接阶段用正常化技术降低用户心理防御。",
       value:
-        "公司如果需要 PM 把散乱的用户声音变成清晰的需求优先级，我能用经反复验证的四步漏斗来完成，而不是凭感觉拍脑袋。",
+        "普通 PM 靠直觉做设计决策。公司如果需要 PM 在信息架构、体验设计和行为引导上做出有心理学依据的判断，我能用这套检查清单让每个产品决策都有理论支撑，而不是「我觉得这样更好」。",
     },
     {
       title: "多语言 / 多市场产品适配清单",
@@ -71,12 +71,12 @@ const methodology = {
         "If your company is shipping AI features, I bring a battle-tested framework — not just 'connect to an API', but design the full fault tolerance, validation, and growth loop around it.",
     },
     {
-      title: "User Feedback → Product Requirements Pipeline",
-      steps: ["Multi-channel collect", "Attribution·trace WHY", "Frequency×Pain×Cost rank", "Output·quote+solution"],
+      title: "Psychology-Driven Product Design",
+      steps: ["Information display·reduce cognitive load", "Behavior guidance·foot-in-the-door", "Experience perception·peak-end rule", "Habit formation·cue→routine→reward"],
       evidence:
-        "Master's in Applied Psychology + 10k+ samples. Alarm: 2,092 responses → prioritized content ranking. Nigeria: 'number-entry anxiety' → editable correction UX.",
+        "OCR: compressed 'type 10 digits' into 'scan once' — reducing operational load. Alarm: transformed morning from 'harsh alarm' to 'gentle voice + weather/time' — changed the endpoint of the experience. Anxin: free session → paid fitness pack via foot-in-the-door effect; S0 normalization technique reduces psychological defensiveness.",
       value:
-        "If your team needs a PM who turns messy user signals into clear priorities, I bring a battle-tested four-stage funnel — no gut-feel guessing.",
+        "Most PMs design by gut feel. If your team needs a PM who makes evidence-based decisions about information architecture, experience design, and behavior guidance — I bring psychological principles as a reusable checklist, not just opinions.",
     },
     {
       title: "Multi-Market Product Adaptation Checklist",

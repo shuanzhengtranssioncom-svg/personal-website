@@ -62,7 +62,7 @@ export default function Skills() {
 
   const cards = [
     {
-      color: "#0d0d1a",
+      color: "rgba(6,182,212,0.05)",
       label: t.skills.userResearch,
       title: "10,000+",
       description: t.skills.userResearchDesc,
@@ -72,7 +72,7 @@ export default function Skills() {
       desc: t.skills.userResearchDesc,
     },
     {
-      color: "#0d0d1a",
+      color: "rgba(6,182,212,0.05)",
       label: t.skills.aiPrototype,
       title: "Axure → AI",
       description: t.skills.aiPrototypeDesc,
@@ -82,7 +82,7 @@ export default function Skills() {
       desc: t.skills.aiPrototypeDesc,
     },
     {
-      color: "#0d0d1a",
+      color: "rgba(6,182,212,0.05)",
       label: t.skills.english,
       title: "534",
       description: t.skills.englishDesc,

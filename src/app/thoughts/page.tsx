@@ -122,7 +122,7 @@ export default function ThoughtsPage() {
     <>
       <NavBar />
       <main className="flex-1 pt-24 relative overflow-hidden">
-        {/* Particles — full page */}
+        {/* Particles — full page background */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Particles
             particleCount={200}
@@ -181,7 +181,7 @@ export default function ThoughtsPage() {
               clickEffect
               spotlightRadius={180}
               glowColor="6, 182, 212"
-              rippleScale={0.12}
+              rippleScale={0.5}
               textAutoHide={false}
               renderCard={(card: any) => {
                 const item = card._item;

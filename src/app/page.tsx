@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <NavBar />
       <main className="flex-1 relative">
-        {/* Particles — full page */}
+        {/* Particles — full page background */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Particles
             particleCount={200}
@@ -29,7 +29,7 @@ export default function Home() {
             className="w-full h-full"
           />
         </div>
-        {/* Ambient glow */}
+        {/* Ambient glow — shared across all sections */}
         <div className="absolute inset-0 pointer-events-none mesh-bg" />
         <div className="absolute top-[5%] left-1/2 w-[500px] h-[500px] -translate-x-1/2 pointer-events-none bg-[radial-gradient(circle,rgba(6,182,212,0.10)_0%,transparent_70%)] blur-[80px]" />
         <div className="absolute top-[45%] left-1/4 w-[350px] h-[350px] pointer-events-none bg-[radial-gradient(circle,rgba(168,85,247,0.05)_0%,transparent_70%)] blur-[80px]" />

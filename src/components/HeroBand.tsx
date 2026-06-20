@@ -7,7 +7,6 @@ import { useLang } from "@/lib/i18n";
 export default function HeroBand() {
   const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -78,14 +77,6 @@ export default function HeroBand() {
         }
       );
 
-      // 6. Background pulse
-      gsap.to(bgRef.current, {
-        scale: 1.08,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -108,13 +99,6 @@ export default function HeroBand() {
       id="hero"
       className="relative flex min-h-[90vh] items-center justify-center px-6 pt-14 overflow-hidden"
     >
-      {/* Animated background glow — mesh gradient */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 pointer-events-none mesh-bg"
-      />
-      <div className="absolute top-[-100px] left-1/2 w-[500px] h-[500px] -translate-x-1/2 pointer-events-none bg-[radial-gradient(circle,rgba(6,182,212,0.15)_0%,transparent_70%)] blur-[80px]" />
-
       <div className="relative w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
         {/* Left: Text content — 2/3 */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">

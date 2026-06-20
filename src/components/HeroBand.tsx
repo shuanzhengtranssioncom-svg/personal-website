@@ -1,28 +1,12 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 
 export default function HeroBand() {
   const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
-  const textAreaRef = useRef<HTMLDivElement>(null);
-  const [glow, setGlow] = useState({ x: 0, y: 0, active: false });
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!textAreaRef.current) return;
-    const rect = textAreaRef.current.getBoundingClientRect();
-    setGlow({
-      x: e.clientX - rect.left - rect.width / 2,
-      y: e.clientY - rect.top - rect.height / 2,
-      active: true,
-    });
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setGlow({ x: 0, y: 0, active: false });
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -117,78 +101,8 @@ export default function HeroBand() {
     >
       <div className="relative w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
         {/* Left: Text content — 2/3 */}
-        <div
-          ref={textAreaRef}
-          className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left relative"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* ── Misty Glow (SVG feTurbulence) ── */}
-          <svg width="0" height="0" className="absolute pointer-events-none">
-            <defs>
-              <filter id="misty-glow" x="-100%" y="-100%" width="300%" height="300%">
-                <feTurbulence
-                  type="fractalNoise"
-                  baseFrequency="0.035"
-                  numOctaves="4"
-                  seed="3"
-                  result="noise"
-                />
-                <feColorMatrix
-                  type="matrix"
-                  values="
-                    0 0 0 0  0.02
-                    0 0 0 0  0.24
-                    0 0 0 0  0.46
-                    0 0 0 0.7 0
-                  "
-                  in="noise"
-                  result="colored"
-                />
-                <feGaussianBlur stdDeviation="18" in="colored" result="blurred" />
-                <feComponentTransfer in="blurred">
-                  <feFuncA type="linear" slope="1.2" />
-                </feComponentTransfer>
-              </filter>
-            </defs>
-          </svg>
-          {/* Misty aura — default small / hover large */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              left: "50%",
-              top: "42%",
-              width: "360px",
-              height: "360px",
-              marginLeft: "-180px",
-              marginTop: "-180px",
-              background:
-                "radial-gradient(circle, rgba(0,80,140,0.6) 0%, rgba(0,50,100,0.3) 25%, rgba(0,30,70,0.1) 55%, transparent 75%)",
-              filter: "url(#misty-glow) blur(8px)",
-              transform: `translate(${glow.x * 0.15}px, ${glow.y * 0.15}px) scale(${glow.active ? 3 : 1})`,
-              opacity: glow.active ? 0.85 : 0.4,
-              transition: "transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.8s ease-out",
-            }}
-          />
-          {/* Core bright region — tight glow */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              left: "50%",
-              top: "42%",
-              width: "120px",
-              height: "120px",
-              marginLeft: "-60px",
-              marginTop: "-60px",
-              background:
-                "radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(0,100,180,0.5) 20%, rgba(0,40,100,0.15) 50%, transparent 70%)",
-              filter: "blur(4px)",
-              transform: `translate(${glow.x * 0.06}px, ${glow.y * 0.06}px) scale(${glow.active ? 1.5 : 1})`,
-              opacity: glow.active ? 0.9 : 0.5,
-              transition: "transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out",
-            }}
-          />
-          <h1 className="relative z-1 text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <h1 className="text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
             <span className="bg-gradient-to-br from-text via-purple-300 to-purple inline-block text-transparent bg-clip-text">
               {chars}
             </span>

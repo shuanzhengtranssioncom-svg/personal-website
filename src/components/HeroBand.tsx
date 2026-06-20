@@ -52,20 +52,6 @@ export default function HeroBand() {
         }
       );
 
-      // 4. Photos stagger reveal
-      gsap.fromTo(
-        ".hero-photo",
-        { scale: 0.85, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          delay: 0.4,
-          ease: "power3.out",
-        }
-      );
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -100,9 +86,9 @@ export default function HeroBand() {
         />
       </div>
 
-      <div className="relative z-1 w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
-        {/* Left: Text content — 2/3 */}
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+      <div className="relative z-1 w-full max-w-3xl mx-auto">
+        {/* Text content */}
+        <div className="flex flex-col items-center text-center">
           <h1 className="text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
             <span className="bg-gradient-to-br from-text via-purple-300 to-purple inline-block text-transparent bg-clip-text">
               {chars}
@@ -154,53 +140,6 @@ export default function HeroBand() {
           </div>
         </div>
 
-        {/* Right: Photos — 1/3 */}
-        <div className="hidden lg:flex flex-col gap-3 w-[280px] shrink-0">
-          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
-            <img
-              src="/hike-20km.jpg"
-              alt="徒步20km — 周末在山上"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 pt-6">
-              <span className="text-[11px] text-white/80 font-medium">徒步 20km</span>
-            </div>
-          </div>
-          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
-            <img
-              src="/climb.jpeg"
-              alt="登山 — 海拔1000m"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 pt-6">
-              <span className="text-[11px] text-white/80 font-medium">海拔 1000m</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile: photos below text */}
-        <div className="flex lg:hidden flex-row gap-2 w-full max-w-xs">
-          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
-            <img
-              src="/hike-20km.jpg"
-              alt="徒步20km"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-4">
-              <span className="text-[10px] text-white/80 font-medium">徒步 20km</span>
-            </div>
-          </div>
-          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
-            <img
-              src="/climb.jpeg"
-              alt="登山"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-4">
-              <span className="text-[10px] text-white/80 font-medium">海拔 1000m</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -40,8 +40,10 @@ html {
 /* ── Mesh gradient backgrounds ── */
 .mesh-bg {
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(6,182,212,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(168,85,247,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 20%, rgba(6,182,212,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(168,85,247,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(168,85,247,0.05) 0%, transparent 50%),
     radial-gradient(ellipse at 50% 50%, rgba(6,182,212,0.03) 0%, transparent 60%),
     var(--color-bg);
 }

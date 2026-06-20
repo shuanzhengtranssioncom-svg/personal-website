@@ -117,7 +117,7 @@ export default function Skills() {
         clickEffect
         spotlightRadius={400}
         particleCount={12}
-        glowColor="132, 0, 255"
+        glowColor="6, 182, 212"
         disableAnimations={false}
         renderCard={(card: any) => (
           <div className="flex flex-col items-center text-center w-full h-full justify-center gap-2 px-2">

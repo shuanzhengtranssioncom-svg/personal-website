@@ -181,7 +181,7 @@ export default function ThoughtsPage() {
               clickEffect
               spotlightRadius={180}
               glowColor="6, 182, 212"
-              rippleScale={0.5}
+              rippleScale={0.12}
               textAutoHide={false}
               renderCard={(card: any) => {
                 const item = card._item;

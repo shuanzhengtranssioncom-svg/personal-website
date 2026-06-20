@@ -66,10 +66,10 @@ export default function NavBar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <button
           onClick={goHome}
-          className="text-sm font-bold tracking-[0.2em] text-text hover:text-cyan transition-colors cursor-pointer"
+          className="text-base font-bold tracking-[0.2em] text-text hover:text-cyan transition-colors cursor-pointer"
         >
           ZS
         </button>
@@ -83,7 +83,7 @@ export default function NavBar() {
               <button
                 key={item.type === "route" ? item.href : item.id}
                 onClick={() => handleNav(item)}
-                className={`px-3 py-1.5 text-sm rounded-md hover:bg-[rgba(255,255,255,0.06)] transition-colors cursor-pointer ${
+                className={`px-4 py-2 text-base rounded-md hover:bg-[rgba(255,255,255,0.06)] transition-colors cursor-pointer ${
                   isActive ? "text-cyan" : "text-text-muted hover:text-text"
                 }`}
               >
@@ -94,7 +94,7 @@ export default function NavBar() {
         </nav>
         <button
           onClick={toggleLang}
-          className="px-3 py-1.5 text-sm font-medium rounded-md bg-[rgba(255,255,255,0.06)] text-text-muted hover:text-text hover:bg-[rgba(255,255,255,0.1)] transition-colors cursor-pointer"
+          className="px-4 py-2 text-base font-medium rounded-md bg-[rgba(255,255,255,0.06)] text-text-muted hover:text-text hover:bg-[rgba(255,255,255,0.1)] transition-colors cursor-pointer"
         >
           {lang === "zh" ? "EN" : "中文"}
         </button>

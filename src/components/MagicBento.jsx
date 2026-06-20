@@ -483,6 +483,7 @@ const MagicBento = ({
   clickEffect = true,
   enableMagnetism = true,
   cards = cardData,
+  renderCard,
 }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
@@ -511,6 +512,20 @@ const MagicBento = ({
             }
           };
 
+          const cardContent = renderCard ? (
+            renderCard(card, index)
+          ) : (
+            <>
+              <div className="magic-bento-card__header">
+                <div className="magic-bento-card__label">{card.label}</div>
+              </div>
+              <div className="magic-bento-card__content">
+                <h2 className="magic-bento-card__title">{card.title}</h2>
+                <p className="magic-bento-card__description">{card.description}</p>
+              </div>
+            </>
+          );
+
           if (enableStars) {
             return (
               <ParticleCard
@@ -523,13 +538,7 @@ const MagicBento = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <div className="magic-bento-card__header">
-                  <div className="magic-bento-card__label">{card.label}</div>
-                </div>
-                <div className="magic-bento-card__content">
-                  <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <p className="magic-bento-card__description">{card.description}</p>
-                </div>
+                {cardContent}
               </ParticleCard>
             );
           }
@@ -646,13 +655,7 @@ const MagicBento = ({
                 el.addEventListener('click', handleClick);
               }}
             >
-              <div className="magic-bento-card__header">
-                <div className="magic-bento-card__label">{card.label}</div>
-              </div>
-              <div className="magic-bento-card__content">
-                <h2 className="magic-bento-card__title">{card.title}</h2>
-                <p className="magic-bento-card__description">{card.description}</p>
-              </div>
+              {cardContent}
             </div>
           );
         })}

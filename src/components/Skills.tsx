@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { gsap } from "gsap";
 import { useLang } from "@/lib/i18n";
 
 function PeopleDensity() {
@@ -58,10 +59,96 @@ function ScoreRing() {
   );
 }
 
-// ── Border glow + click ripple card wrapper ──
+// ── Glow card with border glow + particle stars + click ripple ──
+
+function createParticle(x: number, y: number) {
+  const el = document.createElement("div");
+  el.style.cssText = `
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(6,182,212,1);
+    box-shadow: 0 0 6px rgba(6,182,212,0.6);
+    pointer-events: none;
+    z-index: 100;
+    left: ${x}px; top: ${y}px;
+  `;
+  return el;
+}
 
 function GlowCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const hoveringRef = useRef(false);
+  const particlesRef = useRef<{ el: HTMLDivElement; x: number; y: number; angle: number; speed: number }[]>([]);
+  const animFrameRef = useRef<number>(0);
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  // Particle animation loop
+  const animateParticles = useCallback(() => {
+    if (!hoveringRef.current || !cardRef.current) return;
+    const { width, height } = cardRef.current.getBoundingClientRect();
+
+    particlesRef.current.forEach((p) => {
+      p.x += Math.cos(p.angle) * p.speed;
+      p.y += Math.sin(p.angle) * p.speed;
+      p.el.style.left = `${p.x}px`;
+      p.el.style.top = `${p.y}px`;
+
+      // Wrap around edges
+      if (p.x < -10 || p.x > width + 10 || p.y < -10 || p.y > height + 10) {
+        p.x = Math.random() * width;
+        p.y = Math.random() * height;
+        p.angle = Math.random() * Math.PI * 2;
+      }
+    });
+
+    animFrameRef.current = requestAnimationFrame(animateParticles);
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    if (!cardRef.current) return;
+    hoveringRef.current = true;
+    const { width, height } = cardRef.current.getBoundingClientRect();
+
+    // Spawn initial particles
+    for (let i = 0; i < 12; i++) {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const el = createParticle(x, y);
+      cardRef.current.appendChild(el);
+
+      gsap.fromTo(el, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" });
+
+      particlesRef.current.push({
+        el, x, y,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.3 + Math.random() * 0.7,
+      });
+    }
+
+    // Slowly spawn more particles
+    const interval = setInterval(() => {
+      if (!hoveringRef.current || !cardRef.current) {
+        clearInterval(interval);
+        return;
+      }
+      const w = cardRef.current.getBoundingClientRect().width;
+      const h = cardRef.current.getBoundingClientRect().height;
+      const ex = Math.random() * w;
+      const ey = Math.random() * h;
+      const el = createParticle(ex, ey);
+      cardRef.current.appendChild(el);
+      gsap.fromTo(el, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" });
+      particlesRef.current.push({
+        el, x: ex, y: ey,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.3 + Math.random() * 0.7,
+      });
+    }, 500);
+    timeoutsRef.current.push(interval);
+
+    animFrameRef.current = requestAnimationFrame(animateParticles);
+  }, [animateParticles]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const el = cardRef.current;
@@ -78,7 +165,21 @@ function GlowCard({ children, className = "" }: { children: React.ReactNode; cla
   const handleMouseLeave = useCallback(() => {
     const el = cardRef.current;
     if (!el) return;
+    hoveringRef.current = false;
     el.style.setProperty("--glow-intensity", "0");
+
+    cancelAnimationFrame(animFrameRef.current);
+    timeoutsRef.current.forEach(clearInterval);
+    timeoutsRef.current = [];
+
+    // Fade out and remove all particles
+    particlesRef.current.forEach((p) => {
+      gsap.to(p.el, {
+        scale: 0, opacity: 0, duration: 0.3, ease: "back.in(1.7)",
+        onComplete: () => p.el.parentNode?.removeChild(p.el),
+      });
+    });
+    particlesRef.current = [];
   }, []);
 
   const handleClick = useCallback((e: React.MouseEvent) => {
@@ -115,6 +216,7 @@ function GlowCard({ children, className = "" }: { children: React.ReactNode; cla
     <div
       ref={cardRef}
       className={`glow-card ${className}`}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
@@ -155,8 +257,46 @@ export default function Skills() {
     },
   ];
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const spotlightRef = useRef<HTMLDivElement>(null);
+
+  // Global spotlight following mouse over skills section
+  useEffect(() => {
+    const section = sectionRef.current;
+    const spotlight = spotlightRef.current;
+    if (!section || !spotlight) return;
+
+    const handleMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (inside) {
+        spotlight.style.left = `${e.clientX}px`;
+        spotlight.style.top = `${e.clientY}px`;
+        spotlight.style.opacity = "1";
+      } else {
+        spotlight.style.opacity = "0";
+      }
+    };
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
+
   return (
-    <section id="skills" className="mx-auto max-w-3xl px-6 pb-24">
+    <section ref={sectionRef} id="skills" className="mx-auto max-w-3xl px-6 pb-24 relative">
+      {/* Spotlight */}
+      <div
+        ref={spotlightRef}
+        className="pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
+        style={{
+          width: "600px",
+          height: "600px",
+          borderRadius: "50%",
+          transform: "translate(-50%, -50%)",
+          background: "radial-gradient(circle, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.05) 15%, rgba(6,182,212,0.02) 30%, rgba(6,182,212,0.01) 50%, transparent 65%)",
+          mixBlendMode: "screen",
+        }}
+      />
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-5">
           <span className="w-8 h-px bg-gradient-to-r from-transparent to-cyan/40" />

@@ -166,8 +166,9 @@ export default function ThoughtsPage() {
               enableTilt={false}
               enableMagnetism={false}
               clickEffect
-              spotlightRadius={400}
+              spotlightRadius={180}
               glowColor="6, 182, 212"
+              rippleScale={0.5}
               textAutoHide={false}
               renderCard={(card: any) => {
                 const item = card._item;

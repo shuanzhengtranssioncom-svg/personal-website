@@ -89,7 +89,8 @@ const ParticleCard = ({
   glowColor = DEFAULT_GLOW_COLOR,
   enableTilt = true,
   clickEffect = false,
-  enableMagnetism = false
+  enableMagnetism = false,
+  rippleScale = 1,
 }) => {
   const cardRef = useRef(null);
   const particlesRef = useRef([]);
@@ -263,12 +264,12 @@ const ParticleCard = ({
       const ripple = document.createElement('div');
       ripple.style.cssText = `
         position: absolute;
-        width: ${maxDistance * 2}px;
-        height: ${maxDistance * 2}px;
+        width: ${maxDistance * 2 * rippleScale}px;
+        height: ${maxDistance * 2 * rippleScale}px;
         border-radius: 50%;
         background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
-        left: ${x - maxDistance}px;
-        top: ${y - maxDistance}px;
+        left: ${x - maxDistance * rippleScale}px;
+        top: ${y - maxDistance * rippleScale}px;
         pointer-events: none;
         z-index: 1000;
       `;
@@ -484,6 +485,7 @@ const MagicBento = ({
   enableMagnetism = true,
   cards = cardData,
   renderCard,
+  rippleScale = 1,
 }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
@@ -537,6 +539,7 @@ const MagicBento = ({
                 enableTilt={enableTilt}
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
+                rippleScale={rippleScale}
               >
                 {cardContent}
               </ParticleCard>
@@ -622,12 +625,12 @@ const MagicBento = ({
                   const ripple = document.createElement('div');
                   ripple.style.cssText = `
                     position: absolute;
-                    width: ${maxDistance * 2}px;
-                    height: ${maxDistance * 2}px;
+                    width: ${maxDistance * 2 * rippleScale}px;
+                    height: ${maxDistance * 2 * rippleScale}px;
                     border-radius: 50%;
                     background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
-                    left: ${x - maxDistance}px;
-                    top: ${y - maxDistance}px;
+                    left: ${x - maxDistance * rippleScale}px;
+                    top: ${y - maxDistance * rippleScale}px;
                     pointer-events: none;
                     z-index: 1000;
                   `;

@@ -168,7 +168,7 @@ export default function HeroBand() {
 
         {/* Right: Photos — 1/3 */}
         <div className="hidden lg:flex flex-col gap-3 w-[280px] shrink-0">
-          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-cyan/15 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
+          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
             <img
               src="/hike-20km.jpg"
               alt="徒步20km — 周末在山上"
@@ -178,7 +178,7 @@ export default function HeroBand() {
               <span className="text-[11px] text-white/80 font-medium">徒步 20km</span>
             </div>
           </div>
-          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-cyan/15 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
+          <div className="hero-photo relative aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_30px_rgba(6,182,212,0.08)]">
             <img
               src="/climb.jpeg"
               alt="登山 — 海拔1000m"
@@ -192,7 +192,7 @@ export default function HeroBand() {
 
         {/* Mobile: photos below text */}
         <div className="flex lg:hidden flex-row gap-2 w-full max-w-xs">
-          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-cyan/15 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
+          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
             <img
               src="/hike-20km.jpg"
               alt="徒步20km"
@@ -202,7 +202,7 @@ export default function HeroBand() {
               <span className="text-[10px] text-white/80 font-medium">徒步 20km</span>
             </div>
           </div>
-          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-cyan/15 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
+          <div className="hero-photo relative flex-1 aspect-[4/3] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_20px_rgba(6,182,212,0.06)]">
             <img
               src="/climb.jpeg"
               alt="登山"

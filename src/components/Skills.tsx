@@ -116,7 +116,7 @@ export default function Skills() {
         {cards.map((card) => (
           <div
             key={card.title}
-            className="rounded-xl border border-cyan/20 bg-cyan/[0.04] p-6 flex flex-col items-center text-center transition-all duration-300 hover:border-cyan/40 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)] hover:-translate-y-1"
+            className="rounded-xl border border-white/8 bg-cyan/[0.04] p-6 flex flex-col items-center text-center transition-all duration-300 hover:border-white/15 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)] hover:-translate-y-1"
           >
             <span className="inline-block text-xs font-semibold tracking-wider mb-4 px-2 py-0.5 rounded bg-cyan/10 text-cyan">
               {card.title}

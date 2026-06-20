@@ -158,7 +158,7 @@ export default function ThoughtsPage() {
                   layout
                   className={`relative rounded-2xl border transition-colors overflow-hidden ${
                     isOpen
-                      ? "border-cyan/15 bg-[rgba(255,255,255,0.025)] shadow-[0_0_40px_-12px_rgba(6,182,212,0.06)]"
+                      ? "border-white/10 bg-[rgba(255,255,255,0.05)] shadow-[0_0_40px_-12px_rgba(6,182,212,0.06)]"
                       : "border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.008)] hover:border-[rgba(255,255,255,0.08)]"
                   }`}
                 >

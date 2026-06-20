@@ -782,8 +782,8 @@ export default function ProjectsPage() {
         {/* Particles — full page background */}
         <div className="fixed inset-0 z-10 pointer-events-none">
           <Particles
-            particleCount={200}
-            particleSpread={15}
+            particleCount={300}
+            particleSpread={25}
             speed={0.1}
             particleColors={["#ffffff"]}
             moveParticlesOnHover

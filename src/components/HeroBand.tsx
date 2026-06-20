@@ -97,7 +97,7 @@ export default function HeroBand() {
       <div className="relative z-1 w-full max-w-3xl mx-auto">
         {/* Text content */}
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
+          <h1 className="text-[clamp(48px,8vw,80px)] font-black tracking-[0.06em] mb-6 leading-tight">
             <span className="bg-gradient-to-br from-text via-purple-300 to-purple inline-block text-transparent bg-clip-text">
               {chars}
             </span>
@@ -108,7 +108,7 @@ export default function HeroBand() {
             delay={150}
             animateBy="words"
             direction="top"
-            className="hero-sub text-xl lg:text-2xl font-medium tracking-[0.04em] text-text/90 mb-4"
+            className="hero-sub text-2xl lg:text-3xl font-medium tracking-[0.04em] text-text/90 mb-4"
           />
 
           {/* Contact row */}

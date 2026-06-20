@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
+import SplitText from "@/components/SplitText";
 
 export default function HeroBand() {
   const { t } = useLang();
@@ -24,20 +25,7 @@ export default function HeroBand() {
         }
       );
 
-      // 2. Subtitle
-      gsap.fromTo(
-        ".hero-sub",
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          delay: 0.6,
-          ease: "power3.out",
-        }
-      );
-
-      // 3. Contact row
+      // 2. Contact row
       gsap.fromTo(
         ".hero-contact",
         { y: 16, opacity: 0 },
@@ -45,12 +33,12 @@ export default function HeroBand() {
           y: 0,
           opacity: 1,
           duration: 0.5,
-          delay: 0.8,
+          delay: 0.4,
           ease: "power3.out",
         }
       );
 
-      // 4. CTA
+      // 3. CTA
       gsap.fromTo(
         ".hero-cta",
         { y: 12, opacity: 0 },
@@ -58,12 +46,12 @@ export default function HeroBand() {
           y: 0,
           opacity: 1,
           duration: 0.5,
-          delay: 1.0,
+          delay: 0.6,
           ease: "power3.out",
         }
       );
 
-      // 5. Photos stagger reveal
+      // 4. Photos stagger reveal
       gsap.fromTo(
         ".hero-photo",
         { scale: 0.85, opacity: 0 },
@@ -108,10 +96,19 @@ export default function HeroBand() {
             </span>
           </h1>
 
-          <p className="hero-sub text-xl lg:text-2xl font-medium tracking-[0.04em] text-text/90 mb-4">
-            郑爽
-            <span className="ml-1.5">· {t.hero.title}</span>
-          </p>
+          <SplitText
+            text={`郑爽 · ${t.hero.title}`}
+            className="hero-sub text-xl lg:text-2xl font-medium tracking-[0.04em] text-text/90 mb-4"
+            delay={50}
+            duration={1.25}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
 
           {/* Contact row */}
           <div className="hero-contact flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-1.5 mb-8 text-xs text-text-muted">

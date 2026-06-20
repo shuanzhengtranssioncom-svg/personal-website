@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 import BlurText from "@/components/BlurText";
 import Particles from "@/components/Particles";
+import GradientText from "@/components/GradientText";
 
 export default function HeroBand() {
   const { t } = useLang();
@@ -12,21 +13,7 @@ export default function HeroBand() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Character stagger reveal
-      gsap.fromTo(
-        ".hero-char",
-        { y: 40, opacity: 0, rotateX: -40 },
-        {
-          y: 0,
-          opacity: 1,
-          rotateX: 0,
-          duration: 0.7,
-          stagger: 0.04,
-          ease: "back.out(1.4)",
-        }
-      );
-
-      // 2. Contact row
+      // 1. Contact row
       gsap.fromTo(
         ".hero-contact",
         { y: 16, opacity: 0 },
@@ -58,15 +45,6 @@ export default function HeroBand() {
   }, [t]);
 
   const belief = t.hero.belief;
-  const chars = belief.split("").map((char, i) => (
-    <span
-      key={i}
-      className="hero-char inline-block"
-      style={{ willChange: "transform, opacity" }}
-    >
-      {char === " " ? " " : char}
-    </span>
-  ));
 
   return (
     <section
@@ -95,11 +73,14 @@ export default function HeroBand() {
       <div className="relative z-1 w-full max-w-3xl mx-auto">
         {/* Text content */}
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-[clamp(48px,8vw,80px)] font-black tracking-[0.06em] mb-6 leading-tight">
-            <span className="bg-gradient-to-br from-text via-purple-300 to-purple inline-block text-transparent bg-clip-text">
-              {chars}
-            </span>
-          </h1>
+          <GradientText
+            colors={["#5227FF", "#FF9FFC", "#B497CF"]}
+            animationSpeed={8}
+            showBorder={false}
+            className="text-[clamp(48px,8vw,80px)] font-black tracking-[0.06em] mb-6 leading-tight"
+          >
+            {belief}
+          </GradientText>
 
           <BlurText
             text={`郑爽 · ${t.hero.title}`}

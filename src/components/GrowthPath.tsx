@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "@/lib/i18n";
+import GradientText from "@/components/GradientText";
 
 const milestones = [
   {
@@ -92,9 +93,14 @@ export default function GrowthPath() {
 
               {/* Right: Learned */}
               <div className="hidden sm:flex flex-1 flex-col items-start pl-8 pt-2">
-                <span className="text-sm font-semibold mb-2 text-cyan">
+                <GradientText
+                  colors={["#06b6d4", "#a855f7", "#06b6d4"]}
+                  animationSpeed={8}
+                  showBorder={false}
+                  className="text-sm font-semibold mb-2"
+                >
                   {m.insight}
-                </span>
+                </GradientText>
                 <p className="text-sm text-text-secondary leading-relaxed max-w-[260px]">
                   {m.description}
                 </p>
@@ -116,9 +122,14 @@ export default function GrowthPath() {
                     </div>
                   </div>
                 </div>
-                <span className="inline-block text-xs font-semibold mb-2 text-cyan">
+                <GradientText
+                  colors={["#06b6d4", "#a855f7", "#06b6d4"]}
+                  animationSpeed={8}
+                  showBorder={false}
+                  className="text-xs font-semibold mb-2"
+                >
                   {m.insight}
-                </span>
+                </GradientText>
                 <p className="text-sm text-text-secondary leading-relaxed">
                   {m.description}
                 </p>

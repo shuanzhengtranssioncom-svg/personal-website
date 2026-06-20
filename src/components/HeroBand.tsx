@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 import BlurText from "@/components/BlurText";
-import Particles from "@/components/Particles";
+
 export default function HeroBand() {
   const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,25 +48,7 @@ export default function HeroBand() {
       id="hero"
       className="relative flex min-h-[90vh] items-center justify-center px-6 pt-14 overflow-hidden"
     >
-      {/* Particles background — full hero */}
-      <div className="absolute inset-0 z-0">
-        <Particles
-          particleCount={300}
-          particleSpread={15}
-          speed={0.1}
-          particleColors={["#ffffff"]}
-          moveParticlesOnHover
-          particleHoverFactor={1}
-          alphaParticles={false}
-          particleBaseSize={100}
-          sizeRandomness={1}
-          cameraDistance={20}
-          disableRotation={false}
-          className="w-full h-full"
-        />
-      </div>
-
-      <div className="relative z-1 w-full max-w-3xl mx-auto">
+      <div className="relative w-full max-w-3xl mx-auto">
         {/* Text content */}
         <div className="flex flex-col items-center text-center">
           <BlurText

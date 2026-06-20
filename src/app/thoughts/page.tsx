@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/i18n";
 import MagicBento from "@/components/MagicBento";
+import Particles from "@/components/Particles";
 
 /* ── Data ─────────────────────────────────────────────── */
 
@@ -121,6 +122,23 @@ export default function ThoughtsPage() {
     <>
       <NavBar />
       <main className="flex-1 pt-24 relative overflow-hidden">
+        {/* Particles — full page */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <Particles
+            particleCount={200}
+            particleSpread={15}
+            speed={0.1}
+            particleColors={["#ffffff"]}
+            moveParticlesOnHover
+            particleHoverFactor={1}
+            alphaParticles={false}
+            particleBaseSize={80}
+            sizeRandomness={1}
+            cameraDistance={20}
+            disableRotation={false}
+            className="w-full h-full"
+          />
+        </div>
         {/* ── Background atmosphere ── */}
         <div className="absolute inset-0 pointer-events-none mesh-bg" />
         <div className="absolute top-[5%] left-1/2 w-[500px] h-[500px] -translate-x-1/2 pointer-events-none bg-[radial-gradient(circle,rgba(6,182,212,0.10)_0%,transparent_70%)] blur-[80px]" />

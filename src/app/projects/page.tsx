@@ -22,6 +22,7 @@ import {
   AlarmContentChart,
 } from "@/components/charts/AlarmSurveyChart";
 import { useLang } from "@/lib/i18n";
+import Particles from "@/components/Particles";
 
 
 const nigeriaProject = {
@@ -777,8 +778,25 @@ export default function ProjectsPage() {
   return (
     <>
       <NavBar />
-      <main className="flex-1 pt-24">
-        <section className="mx-auto max-w-5xl px-6 pb-24">
+      <main className="flex-1 pt-24 relative">
+        {/* Particles — full page */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <Particles
+            particleCount={200}
+            particleSpread={15}
+            speed={0.1}
+            particleColors={["#ffffff"]}
+            moveParticlesOnHover
+            particleHoverFactor={1}
+            alphaParticles={false}
+            particleBaseSize={80}
+            sizeRandomness={1}
+            cameraDistance={20}
+            disableRotation={false}
+            className="w-full h-full"
+          />
+        </div>
+        <section className="relative z-1 mx-auto max-w-5xl px-6 pb-24">
           {/* Tab bar */}
           <div className="flex justify-center mb-6">
             <div className="inline-flex rounded-lg bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.06)] p-1 gap-1">

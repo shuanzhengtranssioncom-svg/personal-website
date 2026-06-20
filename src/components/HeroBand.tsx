@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 import BlurText from "@/components/BlurText";
+import Plasma from "@/components/Plasma";
 
 export default function HeroBand() {
   const { t } = useLang();
@@ -87,7 +88,19 @@ export default function HeroBand() {
       id="hero"
       className="relative flex min-h-[90vh] items-center justify-center px-6 pt-14 overflow-hidden"
     >
-      <div className="relative w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+      {/* Plasma background */}
+      <div className="absolute inset-0 z-0">
+        <Plasma
+          color="#B497CF"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={false}
+        />
+      </div>
+
+      <div className="relative z-1 w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
         {/* Left: Text content — 2/3 */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
           <h1 className="text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">

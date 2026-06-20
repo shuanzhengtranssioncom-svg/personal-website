@@ -123,38 +123,59 @@ export default function HeroBand() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          {/* ── Interactive Halo ── */}
+          {/* ── Sun Halo ── */}
+          {/* Outer expanding aura */}
           <div
-            className="absolute pointer-events-none transition-all duration-700 ease-out"
+            className="absolute pointer-events-none"
             style={{
               left: "50%",
-              top: "35%",
-              width: "360px",
-              height: "360px",
-              marginLeft: "-180px",
-              marginTop: "-180px",
+              top: "42%",
+              width: "320px",
+              height: "320px",
+              marginLeft: "-160px",
+              marginTop: "-160px",
               background:
-                "radial-gradient(circle, rgba(6,182,212,0.28) 0%, rgba(168,85,247,0.18) 35%, transparent 65%)",
-              filter: "blur(48px)",
-              transform: `translate(${glow.x * 0.15}px, ${glow.y * 0.15}px) scale(${glow.active ? 2.2 : 1})`,
-              opacity: glow.active ? 0.95 : 0.45,
+                "radial-gradient(circle, rgba(6,182,212,0.35) 0%, rgba(6,182,212,0.12) 25%, rgba(168,85,247,0.06) 50%, transparent 70%)",
+              filter: "blur(32px)",
+              transform: `translate(${glow.x * 0.12}px, ${glow.y * 0.12}px) scale(${glow.active ? 3.5 : 1})`,
+              opacity: glow.active ? 0.9 : 0.35,
+              transition: "transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.6s ease-out",
             }}
           />
-          {/* ── Secondary warm accent ── */}
+          {/* Mid ring */}
           <div
-            className="absolute pointer-events-none transition-all duration-1000 ease-out"
+            className="absolute pointer-events-none"
             style={{
               left: "50%",
-              top: "55%",
-              width: "200px",
-              height: "200px",
-              marginLeft: "-100px",
-              marginTop: "-100px",
+              top: "42%",
+              width: "80px",
+              height: "80px",
+              marginLeft: "-40px",
+              marginTop: "-40px",
               background:
-                "radial-gradient(circle, rgba(251,113,133,0.12) 0%, transparent 60%)",
-              filter: "blur(30px)",
-              transform: `translate(${glow.x * -0.1}px, ${glow.y * -0.1}px) scale(${glow.active ? 1.8 : 1})`,
-              opacity: glow.active ? 0.7 : 0.3,
+                "radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(6,182,212,0.4) 30%, transparent 60%)",
+              filter: "blur(6px)",
+              transform: `translate(${glow.x * 0.08}px, ${glow.y * 0.08}px) scale(${glow.active ? 1.6 : 1})`,
+              opacity: glow.active ? 0.95 : 0.55,
+              transition: "transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s ease-out",
+            }}
+          />
+          {/* Bright core dot */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: "50%",
+              top: "42%",
+              width: "16px",
+              height: "16px",
+              marginLeft: "-8px",
+              marginTop: "-8px",
+              background:
+                "radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(6,182,212,0.7) 30%, transparent 60%)",
+              filter: "blur(1px)",
+              transform: `translate(${glow.x * 0.05}px, ${glow.y * 0.05}px)`,
+              opacity: glow.active ? 1 : 0.6,
+              transition: "opacity 0.4s ease-out",
             }}
           />
           <h1 className="relative z-1 text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">

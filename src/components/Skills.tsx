@@ -105,8 +105,9 @@ export default function Skills() {
         </div>
       </div>
 
-      <MagicBento
-        cards={cards}
+      <div className="skills-bento">
+        <MagicBento
+          cards={cards}
         textAutoHide={false}
         enableStars
         enableSpotlight
@@ -138,6 +139,7 @@ export default function Skills() {
           </div>
         )}
       />
+      </div>
     </section>
   );
 }

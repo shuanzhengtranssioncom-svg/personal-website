@@ -104,38 +104,20 @@ html {
   50%      { box-shadow: 0 0 25px rgba(6,182,212,0.35), 0 0 50px rgba(6,182,212,0.1); }
 }
 
-/* ── Glow card (border glow on mouse move) ── */
-.glow-card {
-  --glow-x: 50%;
-  --glow-y: 50%;
-  --glow-intensity: 0;
-  --glow-radius: 300px;
-  position: relative;
-  overflow: hidden;
+/* ── Skills Bento override — uniform grid, no size variation ── */
+.skills-bento .card-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
 }
-.glow-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: var(--glow-intensity);
-  background: radial-gradient(
-    circle at var(--glow-x) var(--glow-y),
-    rgba(132, 0, 255, 0.25) 0%,
-    rgba(132, 0, 255, 0.08) 30%,
-    transparent 60%
-  );
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.3s ease-out;
+.skills-bento .magic-bento-card {
+  aspect-ratio: auto;
+  min-height: 320px;
 }
-.glow-card > * {
-  position: relative;
-  z-index: 1;
+.skills-bento .magic-bento-card:nth-child(n) {
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
 }
-
-/* ── Click ripple ── */
-@keyframes ripple-expand {
-  0%   { transform: scale(0); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 0; }
+@media (max-width: 767px) {
+  .skills-bento .card-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

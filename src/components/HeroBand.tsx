@@ -5,8 +5,6 @@ import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 import BlurText from "@/components/BlurText";
 import Particles from "@/components/Particles";
-import GradientText from "@/components/GradientText";
-
 export default function HeroBand() {
   const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,8 +42,6 @@ export default function HeroBand() {
     return () => ctx.revert();
   }, [t]);
 
-  const belief = t.hero.belief;
-
   return (
     <section
       ref={containerRef}
@@ -73,15 +69,6 @@ export default function HeroBand() {
       <div className="relative z-1 w-full max-w-3xl mx-auto">
         {/* Text content */}
         <div className="flex flex-col items-center text-center">
-          <GradientText
-            colors={["#5227FF", "#FF9FFC", "#B497CF"]}
-            animationSpeed={8}
-            showBorder={false}
-            className="text-[clamp(48px,8vw,80px)] font-black tracking-[0.06em] mb-6 leading-tight"
-          >
-            {belief}
-          </GradientText>
-
           <BlurText
             text={`郑爽 · ${t.hero.title}`}
             delay={150}

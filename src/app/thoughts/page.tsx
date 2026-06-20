@@ -125,14 +125,14 @@ export default function ThoughtsPage() {
         {/* Particles — full page background */}
         <div className="fixed inset-0 z-10 pointer-events-none">
           <Particles
-            particleCount={300}
+            particleCount={400}
             particleSpread={25}
             speed={0.1}
             particleColors={["#ffffff"]}
             moveParticlesOnHover
             particleHoverFactor={1}
             alphaParticles={false}
-            particleBaseSize={80}
+            particleBaseSize={110}
             sizeRandomness={1}
             cameraDistance={20}
             disableRotation={false}

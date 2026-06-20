@@ -780,7 +780,7 @@ export default function ProjectsPage() {
       <NavBar />
       <main className="flex-1 pt-24 relative">
         {/* Particles — full page background */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="fixed inset-0 z-10 pointer-events-none">
           <Particles
             particleCount={200}
             particleSpread={15}

@@ -122,15 +122,10 @@ export default function ThoughtsPage() {
       <NavBar />
       <main className="flex-1 pt-24 relative overflow-hidden">
         {/* ── Background atmosphere ── */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 right-0 w-[600px] h-[600px] rounded-full bg-cyan/[0.025] blur-[140px]" />
-          <div className="absolute top-[30%] -left-32 w-[500px] h-[500px] rounded-full bg-purple/[0.025] blur-[120px]" />
-          <div className="absolute top-[60%] right-1/4 w-[350px] h-[350px] rounded-full bg-cyan/[0.015] blur-[100px]" />
-        </div>
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.012]"
-          style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "40px 40px" }}
-        />
+        <div className="absolute inset-0 pointer-events-none mesh-bg" />
+        <div className="absolute top-[5%] left-1/2 w-[500px] h-[500px] -translate-x-1/2 pointer-events-none bg-[radial-gradient(circle,rgba(6,182,212,0.10)_0%,transparent_70%)] blur-[80px]" />
+        <div className="absolute top-[45%] left-1/4 w-[350px] h-[350px] pointer-events-none bg-[radial-gradient(circle,rgba(168,85,247,0.05)_0%,transparent_70%)] blur-[80px]" />
+        <div className="absolute top-[45%] right-1/4 w-[350px] h-[350px] pointer-events-none bg-[radial-gradient(circle,rgba(168,85,247,0.05)_0%,transparent_70%)] blur-[80px]" />
 
         {/* ── Content ── */}
         <section className="relative mx-auto max-w-[720px] px-6 pb-24">

@@ -52,7 +52,7 @@ export default function NavBar() {
   };
 
   const tabs: NavItem[] = [
-    { label: t.nav.about, type: "anchor", id: "skills" },
+    { label: t.nav.about, type: "route", href: "/" },
     { label: t.nav.growth, type: "anchor", id: "growth" },
     { label: t.nav.projects, type: "route", href: "/projects" },
     { label: t.nav.thoughts, type: "route", href: "/thoughts" },

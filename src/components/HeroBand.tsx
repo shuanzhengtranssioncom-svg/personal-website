@@ -89,6 +89,7 @@ export default function HeroBand() {
             sizeRandomness={1}
             cameraDistance={20}
             disableRotation={false}
+            className=""
           />
         </div>
       </div>

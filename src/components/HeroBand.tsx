@@ -1,12 +1,28 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
 
 export default function HeroBand() {
   const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
+  const textAreaRef = useRef<HTMLDivElement>(null);
+  const [glow, setGlow] = useState({ x: 0, y: 0, active: false });
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!textAreaRef.current) return;
+    const rect = textAreaRef.current.getBoundingClientRect();
+    setGlow({
+      x: e.clientX - rect.left - rect.width / 2,
+      y: e.clientY - rect.top - rect.height / 2,
+      active: true,
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setGlow({ x: 0, y: 0, active: false });
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -101,8 +117,47 @@ export default function HeroBand() {
     >
       <div className="relative w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
         {/* Left: Text content — 2/3 */}
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <h1 className="text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
+        <div
+          ref={textAreaRef}
+          className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left relative"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* ── Interactive Halo ── */}
+          <div
+            className="absolute pointer-events-none transition-all duration-700 ease-out"
+            style={{
+              left: "50%",
+              top: "35%",
+              width: "360px",
+              height: "360px",
+              marginLeft: "-180px",
+              marginTop: "-180px",
+              background:
+                "radial-gradient(circle, rgba(6,182,212,0.28) 0%, rgba(168,85,247,0.18) 35%, transparent 65%)",
+              filter: "blur(48px)",
+              transform: `translate(${glow.x * 0.15}px, ${glow.y * 0.15}px) scale(${glow.active ? 2.2 : 1})`,
+              opacity: glow.active ? 0.95 : 0.45,
+            }}
+          />
+          {/* ── Secondary warm accent ── */}
+          <div
+            className="absolute pointer-events-none transition-all duration-1000 ease-out"
+            style={{
+              left: "50%",
+              top: "55%",
+              width: "200px",
+              height: "200px",
+              marginLeft: "-100px",
+              marginTop: "-100px",
+              background:
+                "radial-gradient(circle, rgba(251,113,133,0.12) 0%, transparent 60%)",
+              filter: "blur(30px)",
+              transform: `translate(${glow.x * -0.1}px, ${glow.y * -0.1}px) scale(${glow.active ? 1.8 : 1})`,
+              opacity: glow.active ? 0.7 : 0.3,
+            }}
+          />
+          <h1 className="relative z-1 text-[clamp(32px,6vw,56px)] font-black tracking-[0.06em] mb-6 leading-tight">
             <span className="bg-gradient-to-br from-text via-purple-300 to-purple inline-block text-transparent bg-clip-text">
               {chars}
             </span>

@@ -74,24 +74,22 @@ export default function HeroBand() {
       id="hero"
       className="relative flex min-h-[90vh] items-center justify-center px-6 pt-14 overflow-hidden"
     >
-      {/* Particles background */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <div style={{ width: "1080px", height: "1080px", position: "relative" }}>
-          <Particles
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleColors={["#ffffff"]}
-            moveParticlesOnHover
-            particleHoverFactor={1}
-            alphaParticles={false}
-            particleBaseSize={100}
-            sizeRandomness={1}
-            cameraDistance={20}
-            disableRotation={false}
-            className=""
-          />
-        </div>
+      {/* Particles background — full hero */}
+      <div className="absolute inset-0 z-0">
+        <Particles
+          particleCount={300}
+          particleSpread={15}
+          speed={0.1}
+          particleColors={["#ffffff"]}
+          moveParticlesOnHover
+          particleHoverFactor={1}
+          alphaParticles={false}
+          particleBaseSize={100}
+          sizeRandomness={1}
+          cameraDistance={20}
+          disableRotation={false}
+          className="w-full h-full"
+        />
       </div>
 
       <div className="relative z-1 w-full max-w-3xl mx-auto">

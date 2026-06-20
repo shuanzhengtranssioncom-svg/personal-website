@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useLang } from "@/lib/i18n";
-import SplitText from "@/components/SplitText";
+import BlurText from "@/components/BlurText";
 
 export default function HeroBand() {
   const { t } = useLang();
@@ -96,18 +96,12 @@ export default function HeroBand() {
             </span>
           </h1>
 
-          <SplitText
+          <BlurText
             text={`郑爽 · ${t.hero.title}`}
+            delay={150}
+            animateBy="words"
+            direction="top"
             className="hero-sub text-xl lg:text-2xl font-medium tracking-[0.04em] text-text/90 mb-4"
-            delay={50}
-            duration={1.25}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
           />
 
           {/* Contact row */}

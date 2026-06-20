@@ -35,7 +35,7 @@ function ToolTransition() {
       <text x="27" y="22" textAnchor="middle" fill="#64748b" fontSize="8" fontFamily="system-ui">Axure</text>
       <line x1="49" y1="18" x2="85" y2="18" stroke="#06b6d4" strokeWidth="1.5" />
       <polygon points="83,14 91,18 83,22" fill="#06b6d4" />
-      <rect x="91" y="8" width="44" height="20" rx="4" fill="rgba(6,182,212,0.12)" stroke="#06b6d4" strokeWidth="1" />
+      <rect x="91" y="8" width="44" height="20" rx="4" fill="rgba(132,0,255,0.12)" stroke="#06b6d4" strokeWidth="1" />
       <text x="113" y="22" textAnchor="middle" fill="#06b6d4" fontSize="8" fontWeight="600" fontFamily="system-ui">AI 生成</text>
     </svg>
   );
@@ -44,7 +44,7 @@ function ToolTransition() {
 function ScoreRing() {
   return (
     <svg viewBox="0 0 80 80" className="w-full h-auto max-w-[80px] mx-auto" aria-hidden="true">
-      <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(6,182,212,0.08)" strokeWidth="6" />
+      <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(132,0,255,0.08)" strokeWidth="6" />
       <circle
         cx="40" cy="40" r="34"
         fill="none" stroke="#06b6d4" strokeWidth="3"
@@ -67,8 +67,8 @@ function createParticle(x: number, y: number) {
     position: absolute;
     width: 4px; height: 4px;
     border-radius: 50%;
-    background: rgba(6,182,212,1);
-    box-shadow: 0 0 6px rgba(6,182,212,0.6);
+    background: rgba(132,0,255,1);
+    box-shadow: 0 0 6px rgba(132,0,255,0.6);
     pointer-events: none;
     z-index: 100;
     left: ${x}px; top: ${y}px;
@@ -154,12 +154,28 @@ function GlowCard({ children, className = "" }: { children: React.ReactNode; cla
     const el = cardRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--glow-x", `${x}%`);
-    el.style.setProperty("--glow-y", `${y}%`);
+    const px = ((e.clientX - rect.left) / rect.width) * 100;
+    const py = ((e.clientY - rect.top) / rect.height) * 100;
+    const cx = e.clientX - rect.left - rect.width / 2;
+    const cy = e.clientY - rect.top - rect.height / 2;
+
+    el.style.setProperty("--glow-x", `${px}%`);
+    el.style.setProperty("--glow-y", `${py}%`);
     el.style.setProperty("--glow-intensity", "1");
     el.style.setProperty("--glow-radius", "300px");
+
+    // Tilt + magnetism
+    const rotateX = ((cy) / (rect.height / 2)) * -8;
+    const rotateY = ((cx) / (rect.width / 2)) * 8;
+    const magnetX = cx * 0.04;
+    const magnetY = cy * 0.04;
+    gsap.to(el, {
+      rotateX, rotateY,
+      x: magnetX, y: magnetY,
+      duration: 0.15,
+      ease: "power2.out",
+      transformPerspective: 800,
+    });
   }, []);
 
   const handleMouseLeave = useCallback(() => {
@@ -167,6 +183,13 @@ function GlowCard({ children, className = "" }: { children: React.ReactNode; cla
     if (!el) return;
     hoveringRef.current = false;
     el.style.setProperty("--glow-intensity", "0");
+
+    // Reset tilt + magnetism
+    gsap.to(el, {
+      rotateX: 0, rotateY: 0, x: 0, y: 0,
+      duration: 0.35,
+      ease: "power2.out",
+    });
 
     cancelAnimationFrame(animFrameRef.current);
     timeoutsRef.current.forEach(clearInterval);
@@ -201,7 +224,7 @@ function GlowCard({ children, className = "" }: { children: React.ReactNode; cla
       width: ${maxDist * 2}px;
       height: ${maxDist * 2}px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(6,182,212,0.3) 0%, rgba(6,182,212,0.1) 30%, transparent 70%);
+      background: radial-gradient(circle, rgba(132,0,255,0.3) 0%, rgba(132,0,255,0.1) 30%, transparent 70%);
       left: ${x - maxDist}px;
       top: ${y - maxDist}px;
       pointer-events: none;
@@ -293,7 +316,7 @@ export default function Skills() {
           height: "600px",
           borderRadius: "50%",
           transform: "translate(-50%, -50%)",
-          background: "radial-gradient(circle, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.05) 15%, rgba(6,182,212,0.02) 30%, rgba(6,182,212,0.01) 50%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(132,0,255,0.10) 0%, rgba(132,0,255,0.05) 15%, rgba(132,0,255,0.02) 30%, rgba(132,0,255,0.01) 50%, transparent 65%)",
           mixBlendMode: "screen",
         }}
       />

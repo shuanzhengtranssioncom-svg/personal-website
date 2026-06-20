@@ -796,6 +796,11 @@ export default function ProjectsPage() {
             className="w-full h-full"
           />
         </div>
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none mesh-bg" />
+        <div className="absolute top-[5%] left-1/2 w-[500px] h-[500px] -translate-x-1/2 pointer-events-none bg-[radial-gradient(circle,rgba(6,182,212,0.10)_0%,transparent_70%)] blur-[80px]" />
+        <div className="absolute top-[45%] left-1/4 w-[350px] h-[350px] pointer-events-none bg-[radial-gradient(circle,rgba(168,85,247,0.05)_0%,transparent_70%)] blur-[80px]" />
+        <div className="absolute top-[45%] right-1/4 w-[350px] h-[350px] pointer-events-none bg-[radial-gradient(circle,rgba(168,85,247,0.05)_0%,transparent_70%)] blur-[80px]" />
         <section className="relative z-1 mx-auto max-w-5xl px-6 pb-24">
           {/* Tab bar */}
           <div className="flex justify-center mb-6">

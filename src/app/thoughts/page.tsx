@@ -178,7 +178,7 @@ export default function ThoughtsPage() {
                     <span className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 transition-all ${
                       isOpen
                         ? "border-cyan/20 bg-cyan/[0.06] text-cyan"
-                        : "border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.02)] text-text-muted/40 group-hover:text-text-muted/60"
+                        : "border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.05)] text-text-muted/40 group-hover:text-text-muted/60"
                     }`}>
                       {icons[i]}
                     </span>

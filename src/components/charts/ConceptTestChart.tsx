@@ -66,7 +66,7 @@ export default function ConceptTestChart() {
         {data.map((item) => (
           <div
             key={item.name}
-            className="p-3 rounded-lg border border-border bg-[rgba(255,255,255,0.02)]"
+            className="p-3 rounded-lg border border-border bg-[rgba(255,255,255,0.05)]"
           >
             <div className="flex items-center gap-2 mb-1">
               <span

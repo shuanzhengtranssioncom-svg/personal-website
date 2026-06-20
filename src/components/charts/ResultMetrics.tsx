@@ -2,7 +2,7 @@
 
 export default function ResultMetrics() {
   return (
-    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4">
+    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4">
 
       {/* Main metrics grid */}
       <div className="grid grid-cols-3 gap-3 mb-3">

@@ -2,7 +2,7 @@
 
 export default function TechComparison() {
   return (
-    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4">
+    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4">
       <div className="text-xs font-semibold tracking-[0.2em] text-text-secondary mb-3 text-center">技术方案选型（协同算法团队）</div>
 
       {/* Two options side by side */}
@@ -57,7 +57,7 @@ export default function TechComparison() {
       </div>
 
       {/* PM-driven optimization */}
-      <div className="rounded-md bg-[rgba(255,255,255,0.02)] p-3">
+      <div className="rounded-md bg-[rgba(255,255,255,0.05)] p-3">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-lg font-black text-cyan shrink-0">3,000+</span>
           <span className="text-[10px] text-text-secondary leading-relaxed">

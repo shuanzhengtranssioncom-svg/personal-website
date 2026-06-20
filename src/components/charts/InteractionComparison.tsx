@@ -2,7 +2,7 @@
 
 export default function InteractionComparison() {
   return (
-    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4">
+    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4">
       <div className="text-xs font-semibold tracking-[0.2em] text-text-secondary mb-3 text-center">概念方案设计与用户测试</div>
 
       <p className="text-[10px] text-text-muted mb-3 text-center leading-relaxed">
@@ -43,7 +43,7 @@ export default function InteractionComparison() {
       </div>
 
       {/* Test result */}
-      <div className="flex items-center justify-center gap-4 py-2 rounded-md bg-[rgba(255,255,255,0.02)]">
+      <div className="flex items-center justify-center gap-4 py-2 rounded-md bg-[rgba(255,255,255,0.05)]">
         <div className="text-center">
           <span className="text-lg font-black text-cyan">5</span>
           <span className="text-[10px] text-text-muted"> : </span>

@@ -41,7 +41,7 @@ const opportunities = [
 
 export default function CompetitorAnalysis() {
   return (
-    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4">
+    <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4">
       {/* Feature comparison grid */}
       <div className="grid grid-cols-4 gap-2 mb-3">
         {/* Header row */}

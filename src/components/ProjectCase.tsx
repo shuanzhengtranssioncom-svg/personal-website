@@ -69,7 +69,7 @@ export default function ProjectCase({
   };
 
   return (
-    <div className="rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] overflow-hidden glass-hover">
+    <div className="rounded-xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.05)] overflow-hidden glass-hover">
       {/* Header */}
       {(tag || title || summary || (highlights && highlights.length > 0)) && (
         <div className="px-6 pt-4 pb-3 border-b border-[rgba(255,255,255,0.04)]">

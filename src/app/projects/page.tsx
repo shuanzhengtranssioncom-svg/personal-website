@@ -57,11 +57,11 @@ const nigeriaProject = {
             <div className="space-y-2">
               <SampleStat />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover flex flex-col items-center">
+                <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover flex flex-col items-center">
                   <span className="text-xs text-text-muted mb-2">输入错误率</span>
                   <ErrorRateChart />
                 </div>
-                <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover flex flex-col items-center">
+                <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover flex flex-col items-center">
                   <span className="text-xs text-text-muted mb-2">错误频次分布</span>
                   <ErrorFrequencyChart />
                 </div>
@@ -129,7 +129,7 @@ const nigeriaProject = {
             </div>
             <div className="rounded-lg bg-cyan/5 border border-cyan/10 p-3 space-y-2">
               <TechComparison />
-              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover">
+              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   {["用户纠错", "置信度低", "样本回收", "模型迭代"].map((step, i) => (
                     <div key={step} className="flex items-center gap-2">
@@ -168,7 +168,7 @@ const nigeriaProject = {
               <span className="w-1 h-4 rounded-full bg-purple shrink-0" />
               <span className="text-sm font-bold tracking-[0.1em] text-text">增长策略</span>
             </div>
-            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover">
+            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover">
               <p className="text-[10px] text-text-secondary leading-relaxed">
                 设计首次使用功能引导，在支付页弹框引导使用，让用户快速感知产品价值，累计跳转率 <span className="font-bold text-cyan">83%</span>。
               </p>
@@ -181,7 +181,7 @@ const nigeriaProject = {
               <span className="w-1 h-4 rounded-full bg-[rgba(255,255,255,0.2)] shrink-0" />
               <span className="text-sm font-bold tracking-[0.1em] text-text-muted">如果重来</span>
             </div>
-            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover">
+            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover">
               <p className="text-[10px] text-text-secondary leading-relaxed">
                 增长策略应该在项目初期就和产品方案同步设计。当时把注意力集中在 OCR 准确率上，增长策略是后期才加上的。如果一开始就设计 A/B 测试对比引导转化差异，渗透率可能能推得更高。Concept A/B 测试样本量只有 15 人且都是内部员工，应该在正式开发前做更大规模的外部用户测试。
               </p>
@@ -222,7 +222,7 @@ const alarmProject = {
                   <div className="text-[10px] text-text-muted">闹钟日活（渗透率 70%）</div>
                 </div>
               </div>
-              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-3">
+              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-3">
                 <p className="text-[10px] text-text-secondary leading-relaxed">
                   痛点：仅支持 30+ 铃声，音色粗糙生硬；用户晨起后需在时钟、天气、记事本、日历等多 APP 间频繁切换。更紧迫的是——友商 H/M/O/V 均已提供语音播报，传音处于「人有我无」的状态。
                 </p>
@@ -241,13 +241,13 @@ const alarmProject = {
                 <span className="text-lg font-black text-purple">2,092</span>
                 <span className="text-[10px] text-text-secondary">有效样本（印度、尼日、加纳、巴基斯坦）</span>
               </div>
-              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-3">
+              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-3">
                 <AlarmPainPointChart />
               </div>
-              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-3">
+              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-3">
                 <AlarmInterestChart />
               </div>
-              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-3">
+              <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-3">
                 <AlarmContentChart />
               </div>
             </div>
@@ -403,7 +403,7 @@ const alarmProject = {
               <span className="w-1 h-4 rounded-full bg-[rgba(255,255,255,0.2)] shrink-0" />
               <span className="text-sm font-bold tracking-[0.1em] text-text-muted">如果重来</span>
             </div>
-            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover">
+            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover">
               <p className="text-[10px] text-text-secondary leading-relaxed">
                 竞品分析应该在日常就建立持续监控机制，而不是等到立项后才做。如果更早发现友商已经全面覆盖语音播报功能，可以提前 1-2 个月启动，抢占窗口期。播报内容的首批选择（时间+天气）虽然数据支撑充分，但错过了日程/待办的差异化机会——这部分用户需求后来被验证很强，但当时出于上线速度考虑被排到了二期。
               </p>
@@ -434,7 +434,7 @@ const anxinProject = {
               <span className="w-1 h-4 rounded-full bg-warm shrink-0" />
               <span className="text-sm font-bold tracking-[0.1em] text-text">为什么选这个方向</span>
             </div>
-            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover">
+            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover">
               <p className="text-xs text-text-secondary leading-relaxed">
                 作为一名心理学研究生，我深知当前心理健康问题的普遍性。而心理亚健康人群目前被系统性地忽视了——左边是心理健康的人，右边是达到临床诊断标准的患者，中间那群亚健康人群几乎很少被关注。他们面临一个两难困境：可能没到去看心理咨询师的地步，况且一次咨询 200-800 元，还要承受「我是不是有病」的污名化压力；不去看，深夜情绪崩溃的时候，找朋友，怕消耗人情，找家人，开不了口，只能硬扛。这让我开始思考：AI 在这个领域能不能扮演一个角色，不是替代心理咨询师，而是在硬扛和去咨询之间找到一个中间值？
               </p>
@@ -679,7 +679,7 @@ const anxinProject = {
                   { label: "健身包 · ¥29.9/包", desc: "第一练免费，按需购买不订阅" },
                   { label: "测评 · 免费基础版", desc: "引导对应主题健身包" },
                 ].map((tier) => (
-                  <div key={tier.label} className="rounded bg-[rgba(255,255,255,0.02)] p-2.5 text-center">
+                  <div key={tier.label} className="rounded bg-[rgba(255,255,255,0.05)] p-2.5 text-center">
                     <div className="text-[10px] font-semibold text-warm mb-1">{tier.label}</div>
                     <div className="text-[10px] text-text-muted leading-relaxed">{tier.desc}</div>
                   </div>
@@ -704,7 +704,7 @@ const anxinProject = {
               <span className="text-sm font-bold tracking-[0.1em] text-text-muted">反思</span>
             </div>
 
-            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.02)] p-4 glass-hover space-y-4">
+            <div className="rounded-lg border border-border bg-[rgba(255,255,255,0.05)] p-4 glass-hover space-y-4">
               {/* 已验证的 */}
               <div>
                 <div className="text-[10px] font-semibold text-text mb-2">已验证的技术可行性</div>
@@ -781,7 +781,7 @@ export default function ProjectsPage() {
         <section className="mx-auto max-w-5xl px-6 pb-24">
           {/* Tab bar */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] p-1 gap-1">
+            <div className="inline-flex rounded-lg bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.06)] p-1 gap-1">
               {tabs.map((tab, i) => (
                 <button
                   key={tab.label}

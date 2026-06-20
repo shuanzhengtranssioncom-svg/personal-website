@@ -121,3 +121,25 @@ html {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ── Thoughts Bento override — single column stack ── */
+.thoughts-bento .card-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
+.thoughts-bento .magic-bento-card {
+  border: none !important;
+  background: transparent !important;
+  aspect-ratio: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+.thoughts-bento .magic-bento-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}

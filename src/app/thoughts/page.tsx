@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/i18n";
+import MagicBento from "@/components/MagicBento";
 
 /* ── Data ─────────────────────────────────────────────── */
 
@@ -148,10 +149,30 @@ export default function ThoughtsPage() {
             </p>
           </div>
 
-          {/* Cards */}
-          <div className="space-y-3">
-            {items.map((item, i) => {
-              const isOpen = expanded === i;
+          {/* Cards — MagicBento */}
+          <div className="thoughts-bento">
+            <MagicBento
+              cards={items.map((item, i) => ({
+                color: "rgba(255,255,255,0.008)",
+                label: item.title,
+                title: "",
+                description: "",
+                _item: item,
+                _index: i,
+              }))}
+              enableStars={false}
+              enableBorderGlow={true}
+              enableSpotlight={true}
+              enableTilt={false}
+              enableMagnetism={false}
+              clickEffect
+              spotlightRadius={400}
+              glowColor="132, 0, 255"
+              textAutoHide={false}
+              renderCard={(card: any) => {
+                const item = card._item;
+                const i = card._index;
+                const isOpen = expanded === i;
               return (
                 <motion.div
                   key={i}
@@ -232,7 +253,7 @@ export default function ThoughtsPage() {
                                 </div>
                                 {/* Step pills */}
                                 <div className="flex flex-wrap items-center gap-1.5">
-                                  {item.steps.map((step, si) => (
+                                  {item.steps.map((step: string, si: number) => (
                                     <span key={si} className="flex items-center gap-1.5">
                                       <span className="text-[11px] font-medium text-text-secondary bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)] rounded-full px-3 py-1.5 whitespace-nowrap">
                                         {step}
@@ -287,7 +308,8 @@ export default function ThoughtsPage() {
                   </AnimatePresence>
                 </motion.div>
               );
-            })}
+            }}
+          />
           </div>
 
           {/* Footer note */}

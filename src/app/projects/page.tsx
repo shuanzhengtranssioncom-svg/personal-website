@@ -676,7 +676,7 @@ const anxinProject = {
               </p>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { label: "倾诉 · 每天3次免费", desc: "信任入口，深夜高峰不限次" },
+                  { label: "倾诉 · 不收费", desc: "信任锚点，深夜崩溃时永远能打开" },
                   { label: "健身包 · ¥29.9/包", desc: "第一练免费，按需购买不订阅" },
                   { label: "测评 · 免费基础版", desc: "引导对应主题健身包" },
                 ].map((tier) => (
